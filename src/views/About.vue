@@ -8,6 +8,29 @@ from conception to completion. Experimenting with the restrictions of reality an
 genre, ceaselessly editing the madness around us into relatable stories. To do this, 
 we must be bold, balanced, and beautiful.
     </p>
+      <h3 class="name-title">Jon Campbell Rose</h3>
+    <p>
+      Co-founder/ Head of Video Production
+    </p>
+
+    <h3 class="name-title">Cyrus Gill</h3>
+  <p>
+    Co-founder/ Head of Audio Production
+  </p>
   </div>
 </template>
 
+<script>
+export default {
+  
+}
+</script>
+
+<style lang="scss">
+
+.name-title {
+  margin-top: 5%;
+}
+
+  
+</style>

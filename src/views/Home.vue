@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>This is home.</h1>
+    <h1>Pareidolia* Productions</h1>
 
 
   </div>
@@ -21,8 +21,5 @@ export default {
 
 h1 {
   margin: 0;
-}
-.home {
-  color: $jr-green;
 }
 </style>
