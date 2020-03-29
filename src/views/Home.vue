@@ -1,5 +1,7 @@
 <template>
   <div class="home">
+    <h1>This is home.</h1>
+
 
   </div>
 </template>
@@ -15,5 +17,12 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/assets/style/globalStyles.scss';
 
+h1 {
+  margin: 0;
+}
+.home {
+  color: $jr-green;
+}
 </style>
