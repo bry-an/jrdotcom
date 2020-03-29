@@ -31,7 +31,7 @@ export default {
   margin: auto;
 }
 .header-title {
-  margin-left: 1%;
+  margin-left: 2%;
   font-size: 1.5rem;
 }
 #nav {
