@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <div id="header">
       <div id="nav">
         <div class="header-title">
           Pareidolia
@@ -10,6 +11,7 @@
           <router-link class="nav-item" to="/projects">Projects</router-link>
         </div>
       </div>
+    </div>
     <div class="body">
       <router-view/>
    </div>
@@ -25,6 +27,10 @@ export default {
 <style lang="scss">
 @import '@/assets/style/globalStyles.scss';
 
+html {
+  font-size: 16px;
+  padding: 0;
+}
 #app { 
   width: 100vw;
   height: 100vh;
@@ -40,7 +46,7 @@ export default {
   text-align: right;
   background-color: $jr-blue;
   padding-right: 5%;
-  padding-top: 5%;
+  padding-top: 3%;
   padding-bottom: 1%;
 }
 .nav-item {
@@ -48,7 +54,6 @@ export default {
   text-decoration: none;
 }
 .body {
-  background-color: $jr-cream;
   padding: 0 2%;
   min-height: 100vh;
 }
