@@ -1,18 +1,6 @@
 <template>
   <div class="home">
     <h1>Pareidolia* Productions</h1>
-    <iframe 
-    class="background-video"
-      width="560" 
-      height="315" 
-      src="https://www.youtube.com/embed/YKvX-i8k0SU?showinfo=0&controls=0" 
-      frameborder="0" 
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen
-      >
-    </iframe>
-
-
   </div>
 </template>
 
@@ -27,7 +15,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/assets/style/globalStyles.scss';
 
 h1 {
   margin: 0;
