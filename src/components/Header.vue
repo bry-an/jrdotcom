@@ -26,6 +26,8 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/style/globalStyles.scss';
 
+
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -53,7 +55,7 @@ export default {
 
 #header-title {
   margin-left: 3rem;
-  font-size: 3rem;
+  font-size: 5rem;
   letter-spacing: 3px;
   color: $jr-blue;
 }

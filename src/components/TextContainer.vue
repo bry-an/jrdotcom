@@ -1,6 +1,7 @@
 <template>
 <div class="text">
     <h2 class="title">{{title}}</h2>
+    <h3 class="leading">{{leading}}</h3>
   {{ text }}
 </div>
 </template>
@@ -10,13 +11,17 @@ export default {
   name: 'TextContainer',
   props: {
       text: {
-          type: String,
-          default: '',
+        type: String,
+        default: '',
       },
       title: {
-          type: String,
-          default: '',
+        type: String,
+        default: '',
       },
+      leading: {
+        type: String,
+        default: '',
+      }
   },
 }
 </script>
@@ -36,7 +41,10 @@ h2 {
 }
 .title {
   color: $jr-blue;
+}
 
+.leading {
+  font-weight: bold;
 }
 
 

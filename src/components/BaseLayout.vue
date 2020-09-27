@@ -15,8 +15,8 @@ export default {
 @import '@/assets/style/globalStyles.scss';
 
 .base-layout {
-    color:$jr-cream;
-    background: black;
+    color:#111111;
+    background: $jr-blue;
     opacity: 0.8;
 }
 

@@ -3,8 +3,9 @@
     <hero-header/>
     <div class='text-container' id="about">
     <text-container 
-      :text="subHeaderText"
+      :text="subHeaderBody"
       :title="subHeaderTitle"
+      :leading="subHeaderLeading"
       />
     </div>
   </div>
@@ -25,12 +26,15 @@ export default {
     subHeaderTitle() {
       return "FOAM SODA"
     },
-    subHeaderText() {
-      return `Foam Soda* is a Los Angeles creative agency specializing in audiovisual production.
-          Working with artists from around the world, we take on each step of production
+    subHeaderBody() {
+      return `Working with artists from around the world, we take on each step of production
         from conception to completion. Experimenting with the restrictions of reality and
         genre, ceaselessly editing the madness around us into relatable stories. To do this, 
-        we must be bold, balanced, and beautiful`
+        we must be bold, balanced, and beautiful.`
+    },
+    subHeaderLeading() {
+       return `Foam Soda is a Los Angeles creative agency specializing in audiovisual production.`
+
     }
   }
 }
@@ -47,6 +51,6 @@ h1 {
 }
 .text-container {
   margin-top: 10%;
-  padding-bottom: 10%;
+  padding-bottom: 20%;
 }
 </style>
