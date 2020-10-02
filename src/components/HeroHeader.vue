@@ -41,7 +41,7 @@ export default {
     },
     },
     destroyed() {
-        window.removeEventListener('scroll')
+        window.removeEventListener('scroll', this.scrollListener)
     },
 }
 </script>

@@ -9,15 +9,25 @@
 
 <script>
 export default {
-    
+  name: 'projects',
 }
 </script>
 
 <style lang="scss">
 @import '@/assets/style/globalStyles.scss';
 
+.projects {
+  height: 100vh;
+  margin: auto;
+  width: 80%;
+}
+
+.blue-text {
+  color: $jr-blue;
+}
+
 h1 {
-  margin: 0;
+  margin: auto;
 }
 
 

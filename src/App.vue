@@ -22,6 +22,7 @@ export default {
 
 <style lang="scss">
 @import '@/assets/style/globalStyles.scss';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css';
 
 html {
   font-size: 16px;

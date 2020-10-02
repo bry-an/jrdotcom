@@ -8,6 +8,13 @@
       :leading="subHeaderLeading"
       />
     </div>
+    <div class="wide-image-container">
+    <two-by-two-image 
+    v-if="false"
+    :imageLinks="imageLinks"
+    />
+    </div>
+
   </div>
 </template>
 
@@ -15,16 +22,21 @@
 // @ is an alias to /src
 import HeroHeader from "../components/HeroHeader.vue"
 import TextContainer from "../components/TextContainer.vue"
+import TwoByTwoImage from "../components/TwoByTwoImage.vue"
 
 export default {
   name: 'Home',
   components: {
     HeroHeader,
     TextContainer,
+    TwoByTwoImage,
   },
   computed: {
     subHeaderTitle() {
       return "FOAM SODA"
+    },
+    imageLinks() {
+      return ["https://i.ibb.co/0VFFwXb/jr.jpg","https://i.ibb.co/0VFFwXb/jr.jpg"]
     },
     subHeaderBody() {
       return `Working with artists from around the world, we take on each step of production
@@ -34,9 +46,24 @@ export default {
     },
     subHeaderLeading() {
        return `Foam Soda is a Los Angeles creative agency specializing in audiovisual production.`
-
     }
-  }
+  },
+  mounted() {
+    if (this.$route.query.s === 'true') {
+      setTimeout(() => {
+        this.scroll()
+      }, 500)
+    }
+  },
+  methods: {
+    scroll() {
+      console.log('doc', document.getElementById('about'))
+      document.getElementById('about').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+    },
+  },
 }
 </script>
 
@@ -50,7 +77,9 @@ h1 {
   padding-top: 5%;
 }
 .text-container {
-  margin-top: 10%;
-  padding-bottom: 20%;
+  padding-bottom: 18%;
+}
+.wide-image-container {
+  width: 100%;
 }
 </style>

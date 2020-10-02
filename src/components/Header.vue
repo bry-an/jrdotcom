@@ -1,11 +1,11 @@
 <template>
     <div>
       <div class="header">
-          <h1 id="header-title">FOAM SODA</h1>
+          <h1 id="header-title"> <span :class="pathIsProjects ? 'blue-text': ''">FOAM SODA</span></h1>
         <div id='nav'>
-          <router-link class="nav-item" :to="{name: 'home'}">Home</router-link>
-          <span class="nav-item" @click="handleScroll('about')" :to="{name: 'about'}">About</span>
-          <router-link class="nav-item" :to="{name: 'projects'}">Projects</router-link>
+          <router-link :class="['nav-item',{'blacktext' : pathIsProjects}]" :to="{name: 'home'}">Home</router-link>
+          <span :class="['nav-item',{'blacktext' : pathIsProjects}]" @click="handleScroll('about')" :to="{name: 'about'}">About</span>
+          <router-link :class="['nav-item',{'blacktext' : pathIsProjects}]" :to="{name: 'projects'}">Projects</router-link>
         </div>
       </div>
     </div>
@@ -15,12 +15,21 @@ export default {
   name: 'Header',
   methods: {
     handleScroll(id) {
+      if (this.$route.path === '/projects') {
+        this.$router.push({name: 'home', query: {s: 'true'}})
+      } else {
       document.getElementById(id).scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       })
+      }
     }
   },
+  computed: {
+    pathIsProjects() {
+      return this.$route.path === "/projects"
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -39,11 +48,6 @@ export default {
   position: -webkit-sticky; /* Safari */
   top: 0;
 }
-#nav {
-  padding-right: 0;
-  display: flex;
-  justify-content: end;
-}
 .nav-item {
   padding-right: 3rem;
   padding-top: 1.8rem;
@@ -51,12 +55,20 @@ export default {
   letter-spacing: 1px;
   cursor: pointer;
   color: $jr-cream;
+  font-size: 1.2rem;
+  &.blacktext {
+    color: $jr-red;
+  }
 }
 
 #header-title {
   margin-left: 3rem;
   font-size: 5rem;
   letter-spacing: 3px;
+  color: $jr-green;
+}
+
+.blue-text {
   color: $jr-blue;
 }
 

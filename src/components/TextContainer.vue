@@ -1,8 +1,12 @@
 <template>
 <div class="text">
-    <h2 class="title">{{title}}</h2>
+  <div class='spacer'>
+  </div>
+    <hr class="hr top">
     <h3 class="leading">{{leading}}</h3>
+    <p class="body-text">
   {{ text }}
+  </p>
 </div>
 </template>
 
@@ -32,19 +36,35 @@ export default {
 h2 {
   text-align: center;
 }
+.spacer {
+  height: 60px;
+}
+
+.hr {
+  color: $jr-cream;
+  height: 6px;
+  background: $jr-green;
+  border: 0;
+  margin:0 0 7% 0;
+  width: 20%;
+}
 .text {
-  letter-spacing: 3px;
+  letter-spacing: 5px;
   font-size: 1.8rem;
-  text-align: justify;
   padding: 0 10rem;
   line-height: 4rem;
-}
-.title {
-  color: $jr-blue;
+  width: 40%;
+  margin: auto;
 }
 
 .leading {
   font-weight: bold;
+  margin-bottom: 4%;
+  letter-spacing: 3px;
+  line-height: 93px;
+}
+.body-text {
+  margin-top: 25%;
 }
 
 
