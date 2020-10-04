@@ -4,8 +4,7 @@
   </div>
     <hr class="hr top">
     <h3 class="leading">{{leading}}</h3>
-    <p class="body-text">
-  {{ text }}
+    <p class="body-text" v-html="text">
   </p>
 </div>
 </template>

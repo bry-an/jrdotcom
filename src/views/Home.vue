@@ -39,10 +39,12 @@ export default {
       return ["https://i.ibb.co/0VFFwXb/jr.jpg","https://i.ibb.co/0VFFwXb/jr.jpg"]
     },
     subHeaderBody() {
-      return `Working with artists from around the world, we take on each step of production
-        from conception to completion. Experimenting with the restrictions of reality and
+      return `<p>Working with artists from around the world, we take on each step of production
+        from conception to completion.</p>
+
+        <p>Experimenting with the restrictions of reality and
         genre, ceaselessly editing the madness around us into relatable stories. To do this, 
-        we must be bold, balanced, and beautiful.`
+        we must be bold, balanced, and beautiful.</p>`
     },
     subHeaderLeading() {
        return `Foam Soda is a Los Angeles creative agency specializing in audiovisual production.`
@@ -78,6 +80,7 @@ h1 {
 }
 .text-container {
   padding-bottom: 18%;
+  background-color: $jr-blue;
 }
 .wide-image-container {
   width: 100%;
