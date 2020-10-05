@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <hero-header/>
-    <div class='text-container' id="about">
+    <div class='text-container container' id="about">
     <text-container 
       :text="subHeaderBody"
       :title="subHeaderTitle"
@@ -59,7 +59,6 @@ export default {
   },
   methods: {
     scroll() {
-      console.log('doc', document.getElementById('about'))
       document.getElementById('about').scrollIntoView({
         behavior: 'smooth',
         block: 'start'
@@ -77,6 +76,7 @@ h1 {
 
 .home {
   padding-top: 5%;
+  max-width: 100vw;
 }
 .text-container {
   padding-bottom: 18%;

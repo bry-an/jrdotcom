@@ -3,7 +3,7 @@
   <div class='spacer'>
   </div>
     <hr class="hr top">
-    <h3 class="leading">{{leading}}</h3>
+    <h4 class="leading">{{leading}}</h4>
     <p class="body-text" v-html="text">
   </p>
 </div>
@@ -50,20 +50,18 @@ h2 {
 .text {
   letter-spacing: 5px;
   font-size: 1.8rem;
-  padding: 0 10rem;
   line-height: 4rem;
-  width: 40%;
   margin: auto;
 }
 
 .leading {
-  font-weight: bold;
   margin-bottom: 4%;
   letter-spacing: 3px;
   line-height: 93px;
 }
 .body-text {
   margin-top: 25%;
+  font-size: 2.5rem;
 }
 
 

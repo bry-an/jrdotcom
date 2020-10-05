@@ -48,35 +48,40 @@ $base: 0.6rem;
 
 .hero-image {
   background-color: black; /* Used if the image is unavailable */
-  width: 100%;
   background-position: center; /* Center the image */
-  height: auto;
+  width: 100%;
+  overflow: hidden;
   background-repeat: no-repeat; /* Do not repeat the image */
   position: absolute;
   top: 0;
 }
 
 .layout {
-  width: 100vw;
-  height: calc(100vh - 790px);
+  height: calc(100vh - 590px);
   margin: auto;
   @media (min-width: 600px) {
-      height: calc(100vh - 590px);
+      height: calc(100vh - 560px);
   }
-  @media (min-width: 788px) {
-      height: calc(100vh - 580px);
+  @media (min-width: 700px) {
+      height: calc(100vh - 490px);
   }
-  @media (min-width: 900px) {
-      height: calc(100vh - 380px);
+  @media (min-width: 850px) {
+      height: calc(100vh - 390px);
+  }
+  @media (min-width: 1000px) {
+      height: calc(100vh - 300px);
+  }
+  @media (min-width: 1150px) {
+      height: calc(100vh - 230px);
   }
   @media (min-width: 1320px) {
-      height: calc(100vh - 260px);
+      height: calc(100vh - 120px);
   }
   @media (min-width: 1520px) {
-      height: calc(100vh - 180px);
+      height: calc(100vh - 60px);
   }
   @media (min-width: 1720px) {
-      height: calc(100vh - 60px);
+      height: calc(100vh - 40px);
   }
 }
 .chevron {
