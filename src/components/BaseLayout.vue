@@ -16,8 +16,8 @@ export default {
 
 .base-layout {
     color:#111111;
-    background: $jr-blue;
-    opacity: 0.8;
+    opacity: 0.99;
+    background-color: #111111;
 }
 
 </style>

@@ -1,0 +1,16 @@
+{
+    "videos": [
+        {
+            "id": 1,
+            "name": "Foam Soda",
+            "url": "https://jrdotcom.s3-us-west-1.amazonaws.com/FOAM+VIDEO.mp4"
+        },
+        {
+            "id": 1,
+            "name": "Sample 1",
+            "description": "Even the briefest moments of music can be brought to life by evocative images. Given the vast selection of entertainment these days, music videos aren't competing with other music videos anymore, they're competing with Content, with a capital C. We let the music lead us, and we don't just make 3 minute music videos.",
+            "url": "https://jrdotcom.s3-us-west-1.amazonaws.com/Guitarist+-+46.mp4"
+        }
+
+    ]
+}

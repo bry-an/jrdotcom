@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app container">
     <base-layout>
     <site-header/>
     <router-view />
@@ -22,8 +22,8 @@ export default {
 
 <style lang="scss">
 @import '@/assets/style/globalStyles.scss';
-@import 'https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css';
-@import url('https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@0,100;0,700;1,100;1,400&family=Roboto&family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@0,100;0,700;1,100;1,400&family=PT+Sans+Narrow:wght@400;700&family=Roboto&family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
 
 html {
   font-size: 16px;
@@ -37,7 +37,9 @@ html {
 }
 body {
   margin: 0;
-  color: $jr-cream;
+  padding: 0;
+  color: $logo-cream;
 }
 
 </style>
+<style src="./assets/style/tailwind.css">

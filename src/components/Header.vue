@@ -1,11 +1,13 @@
 <template>
     <div>
-      <div class="header">
-          <h1 id="header-title"> <span :class="pathIsProjects ? 'blue-text': ''">FOAM SODA</span></h1>
+      <div class="header flex flex-col">
+        <div class="header-image-container xl:w-1/12 sm:w-1/6 xs:w-2/12 w-1/4">
+        <img class="header-image" src="https://jrdotcom.s3-us-west-1.amazonaws.com/bottle_cap2.png" alt="foam soda logo">
+        </div>
         <div id='nav'>
-          <router-link :class="['nav-item',{'blacktext' : pathIsProjects}]" :to="{name: 'home'}" :style="navItemColor('/')">Home</router-link>
-          <span :class="['nav-item',{'blacktext' : pathIsProjects}]" @click="handleScroll('about')" :to="{name: '/about'}" :style="navItemColor('/about')">About</span>
-          <router-link :class="['nav-item',{'blacktext' : pathIsProjects}]" :to="{name: 'projects'}" :style="navItemColor('/projects')">Projects</router-link>
+          <span class="nav-item" @click="$store.commit('SET_HOME_STATE', 0)" :style="navItemColor('/')">Home</span>
+          <span class="nav-item" @click="$store.commit('SET_HOME_STATE', 2)" :to="{name: '/about'}" :style="navItemColor('/about')">About</span>
+          <router-link class="nav-item" :to="{name: 'projects'}" :style="navItemColor('/projects')">Projects</router-link>
         </div>
       </div>
     </div>
@@ -27,7 +29,7 @@ export default {
     navItemColor(route)  {
       const currentRoute = this.$route.path
       if (route === currentRoute) {
-        return 'color: #41B883'
+        return 'color: #b4e8c2'
       }
       return ''
     },
@@ -45,49 +47,40 @@ export default {
 
 
 .header {
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column-reverse;
   flex-wrap: wrap;
   text-align: right;
-  padding-top: 3rem;
+  padding: 1.5rem;
   z-index: 10;
-  position: sticky;
+  font-family: 'PT Sans Narrow';
+  position: fixed;
   top: 0;
-  position: -webkit-sticky; /* Safari */
+  background: #222222;
   @media (min-width: 895px) {
     flex-direction: row;
   }
+  font-size: 3rem;
 }
 .nav-item {
-  padding-top: 1.8rem;
   padding-right: 1rem;
   text-decoration: none;
-  letter-spacing: 1px;
+  padding-left: 4rem;
+  letter-spacing: 2px;
   cursor: pointer;
-  color: $jr-cream;
-  font-size: 1.2rem;
+  color: $logo-cream;
+  font-size: 2.2rem;
   &.blacktext {
     color: $jr-red;
   }
-  @media (min-width: 895px) {
-    padding-right: 3rem;
-  }
-}
-#header-title {
-  font-size: 3rem;
-  letter-spacing: 3px;
-  color: $jr-green;
-  @media (min-width: 895px) {
-    font-size: 5rem;
-    margin-left: 3rem;
-  }
-  @media (min-width: 550px) {
-    font-size: 4rem;
-  }
 }
 
+.header-image {
+  padding: 0 2rem;
+}
 .blue-text {
   color: $jr-blue;
 }
