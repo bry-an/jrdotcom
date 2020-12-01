@@ -1,30 +1,41 @@
 <template>
   <div class="home">
-    <hero-header/>
-      <div class="logo-container flex flex-col items-center justify-center">
-          <img 
-          src="https://jrdotcom.s3-us-west-1.amazonaws.com/FOAM_SODA.png"
-          alt="foam soda logo"
-          class="logo">
-      </div>
-      <div class="text-container">
+    <hero-header />
+    <div class="logo-container flex flex-col items-center justify-center">
+      <img
+        src="https://jrdotcom.s3-us-west-1.amazonaws.com/FOAM_SODA.png"
+        alt="foam soda logo"
+        class="logo"
+      />
+    </div>
+      <div id="leading-text" class="text-container">
         <text-container :text="leadingText" />
       </div>
-
+      <div id="body-text" class="text-container">
+        <text-container :text="bodyText[0]" />
+      </div>
+      <div class="text-container">
+        <text-container :text="bodyText[1]" />
+      </div>
+      <div>
+        <vimeo-container :relative="true" url="https://player.vimeo.com/video/475660503"/>
+      </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HeroHeader from "../components/HeroHeader.vue"
-import TextContainer from "../components/TextContainer.vue"
-import {mapGetters} from "vuex"
+import HeroHeader from '../components/HeroHeader.vue'
+import TextContainer from '../components/TextContainer.vue'
+import VimeoContainer from '../components/VimeoContainer.vue'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'Home',
   components: {
     HeroHeader,
     TextContainer,
+    VimeoContainer,
   },
   data: () => ({
     showLeadingText: false,
@@ -36,17 +47,19 @@ export default {
   computed: {
     ...mapGetters(['homeState']),
     subHeaderTitle() {
-      return "FOAM SODA"
+      return 'FOAM SODA'
     },
     leadingText() {
-       return `A Los Angeles creative agency specializing in audiovisual production`
+      return `A Los Angeles creative agency specializing in audiovisual production`
     },
     bodyText() {
-      return `Working with artists from around the world, we take on each step of production
-        from conception to completion.
-        Experimenting with the restrictions of reality and
+      return [
+        `Working with artists from around the world, we take on each step of production
+        from conception to completion`,
+        `Experimenting with the restrictions of reality and
         genre, ceaselessly editing the madness around us into relatable stories. To do this, 
-        we must be bold, balanced, and beautiful.`
+        we must be bold, balanced, and beautiful`,
+      ]
     },
   },
   mounted() {
@@ -61,7 +74,7 @@ export default {
     scroll() {
       document.getElementById('about').scrollIntoView({
         behavior: 'smooth',
-        block: 'start'
+        block: 'start',
       })
     },
     onWheel(e) {
@@ -70,8 +83,7 @@ export default {
           if (this.homeState <= 4) {
             this.$store.commit('INCREMENT_HOME_STATE')
           }
-        }
-        else {
+        } else {
           if (this.homeState >= 1) {
             this.$store.commit('DECREMENT_HOME_STATE')
           }
@@ -81,13 +93,12 @@ export default {
           this.wait = false
         }, 1500)
       }
-    }
+    },
   },
 }
 </script>
 
 <style lang="scss">
-
 h1 {
   margin: 0;
 }
@@ -96,20 +107,21 @@ h1 {
   margin: 0;
 }
 .text-container {
-  padding-top: 5rem;
+  padding-top: 30rem;
   text-align: center;
   font-size: 4rem;
-  height: 100vh;
-  width: 70%;
+  min-height: 80vh;
+  width: 100%;
+  @media (min-width: 400px) {
+    width: 70%;
+  }
+  width: 90%;
   margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .body {
   font-size: 2.8rem;
-  @media (min-width: 1200px){
+  @media (min-width: 1200px) {
     font-size: 4rem;
   }
 }
@@ -121,18 +133,17 @@ h1 {
 .logo {
   width: 50%;
   position: absolute;
-  animation: fadeInAnimation ease 8s; 
-  animation-iteration-count: 1; 
-  animation-fill-mode: forwards; 
+  animation: fadeInAnimation ease 8s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
-@keyframes fadeInAnimation { 
-  0% { 
-      opacity: 0; 
-  } 
-  100% { 
-      opacity: 1; 
-  } 
-} 
-
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 </style>

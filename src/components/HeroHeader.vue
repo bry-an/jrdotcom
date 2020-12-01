@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="hero-header">
     <video-container :url="currentUrl" />
     <div @click="scrollHandler('about')" class="scroll-chevrons" v-if="displayScrollChevrons">
       <div class="chevron" />
@@ -32,9 +32,6 @@ export default {
   computed: {
     ...mapGetters(['homeState']),
     currentUrl() {
-      if (this.homeState > 2) {
-      return videos.videos[1].url
-      }
       return videos.videos[0].url
     }
   },

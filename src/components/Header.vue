@@ -5,8 +5,8 @@
         <img class="header-image" src="https://jrdotcom.s3-us-west-1.amazonaws.com/bottle_cap2.png" alt="foam soda logo">
         </div>
         <div id='nav'>
-          <span class="nav-item" @click="$store.commit('SET_HOME_STATE', 0)" :style="navItemColor('/')">HOME</span>
-          <span class="nav-item" @click="$store.commit('SET_HOME_STATE', 2)" :to="{name: '/about'}" :style="navItemColor('/about')">ABOUT</span>
+          <span class="nav-item" @click="routeHome" :style="navItemColor('/')">HOME</span>
+          <span class="nav-item" @click="routeToAbout" :to="{name: '/about'}" :style="navItemColor('/about')">ABOUT</span>
           <router-link class="nav-item" :to="{name: 'projects'}" :style="navItemColor('/projects')">PROJECTS</router-link>
         </div>
       </div>
@@ -35,18 +35,10 @@ export default {
     navItemColor(route)  {
       const currentRoute = this.$route.path
       if (route === currentRoute) {
-        return 'color: #bf5656'
+      return 'color: #222222;'
       }
-      return ''
+        return 'color: #bf5656'
     },
-  },
-  computed: {
-    pathIsProjects() {
-      return this.$route.path === "/projects"
-    }
-    scrollDown() {
-      if (this.scroll.scrollY >)
-    }
   },
 }
 </script>
@@ -81,7 +73,7 @@ export default {
 .nav-item {
   padding-right: 1rem;
   text-decoration: none;
-  padding-left: 4rem;
+  padding-left: 0.5rem;
   letter-spacing: 2px;
   color: $logo-cream;
   cursor: pointer;
@@ -91,11 +83,15 @@ export default {
   }
   @media (min-width: 895px) {
     font-size: 3.1rem;
+    padding-left: 3rem;
   }
 }
 
 .header-image {
-  padding: 0 2rem;
+  padding: 1rem 2rem;
+  @media (min-width: 895px) {
+    padding: 0rem 2rem;
+  }
 }
 .blue-text {
   color: $jr-blue;
