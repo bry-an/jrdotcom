@@ -25,10 +25,9 @@ h2 {
 
 .text {
   letter-spacing: 5px;
-  font-weight: bold;
-  color: $logo-cream;
-  text-shadow: 2px 2px $logo-red;
-  font-family: 'PT Sans Narrow';
+  font-family: blockhead-dark-side, sans-serif;
+  font-weight: 400;
+  color: $logo-red;
 }
 
 </style>

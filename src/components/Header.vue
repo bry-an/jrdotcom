@@ -1,13 +1,13 @@
 <template>
     <div>
-      <div class="header flex flex-col">
+      <div :class="['header', 'flex', 'flex-col', {'green-background': scrollDown}]">
         <div class="header-image-container xl:w-1/12 sm:w-1/6 xs:w-2/12 w-1/4">
         <img class="header-image" src="https://jrdotcom.s3-us-west-1.amazonaws.com/bottle_cap2.png" alt="foam soda logo">
         </div>
         <div id='nav'>
-          <span class="nav-item" @click="$store.commit('SET_HOME_STATE', 0)" :style="navItemColor('/')">Home</span>
-          <span class="nav-item" @click="$store.commit('SET_HOME_STATE', 2)" :to="{name: '/about'}" :style="navItemColor('/about')">About</span>
-          <router-link class="nav-item" :to="{name: 'projects'}" :style="navItemColor('/projects')">Projects</router-link>
+          <span class="nav-item" @click="$store.commit('SET_HOME_STATE', 0)" :style="navItemColor('/')">HOME</span>
+          <span class="nav-item" @click="$store.commit('SET_HOME_STATE', 2)" :to="{name: '/about'}" :style="navItemColor('/about')">ABOUT</span>
+          <router-link class="nav-item" :to="{name: 'projects'}" :style="navItemColor('/projects')">PROJECTS</router-link>
         </div>
       </div>
     </div>
@@ -15,6 +15,12 @@
 <script>
 export default {
   name: 'Header',
+  props: {
+    scroll: {
+      type: Object,
+      default: () => ({}),
+    }
+  },
   methods: {
     handleScroll(id) {
       if (this.$route.path === '/projects') {
@@ -29,7 +35,7 @@ export default {
     navItemColor(route)  {
       const currentRoute = this.$route.path
       if (route === currentRoute) {
-        return 'color: #b4e8c2'
+        return 'color: #bf5656'
       }
       return ''
     },
@@ -37,6 +43,9 @@ export default {
   computed: {
     pathIsProjects() {
       return this.$route.path === "/projects"
+    }
+    scrollDown() {
+      if (this.scroll.scrollY >)
     }
   },
 }
@@ -56,25 +65,32 @@ export default {
   text-align: right;
   padding: 1.5rem;
   z-index: 10;
-  font-family: 'PT Sans Narrow';
+  font-family: blockhead-dark-side, sans-serif;
+  font-weight: 400;
+  font-style: normal;
   position: fixed;
   top: 0;
-  background: #222222;
+  background: transparent;
+  animation: fadeInAnimation ease 16s; 
+  animation-iteration-count: 1; 
+  animation-fill-mode: forwards; 
   @media (min-width: 895px) {
     flex-direction: row;
   }
-  font-size: 3rem;
 }
 .nav-item {
   padding-right: 1rem;
   text-decoration: none;
   padding-left: 4rem;
   letter-spacing: 2px;
-  cursor: pointer;
   color: $logo-cream;
-  font-size: 2.2rem;
+  cursor: pointer;
+  font-size: 2.1rem;
   &.blacktext {
-    color: $jr-red;
+    color: $logo-green;
+  }
+  @media (min-width: 895px) {
+    font-size: 3.1rem;
   }
 }
 
@@ -84,5 +100,14 @@ export default {
 .blue-text {
   color: $jr-blue;
 }
+
+@keyframes fadeInAnimation { 
+  0% { 
+      opacity: 0; 
+  } 
+  100% { 
+      opacity: 1; 
+  } 
+} 
 
 </style>

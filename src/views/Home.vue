@@ -1,22 +1,16 @@
 <template>
-  <div class="home" @mousewheel="onWheel">
+  <div class="home">
     <hero-header/>
-    <transition name="slide-up">
-      <div v-if="homeState === 0 || homeState === 1" class="logo-container flex flex-col items-center justify-center">
+      <div class="logo-container flex flex-col items-center justify-center">
           <img 
           src="https://jrdotcom.s3-us-west-1.amazonaws.com/FOAM_SODA.png"
           alt="foam soda logo"
-          :class="['logo', {'relative': homeState === 2}]">
-        <transition name="slide-in">
-        <text-container v-if="homeState === 1" class="text-container" :text="leadingText"/>
-        </transition>
+          class="logo">
       </div>
-    </transition>
-      <transition name="fade">
-        <div v-if="homeState === 2" class="logo-container flex flex-col items-center body-text justify-center">
-          <text-container class="text-container body" :text="bodyText"/>
-        </div>
-      </transition>
+      <div class="text-container">
+        <text-container :text="leadingText" />
+      </div>
+
   </div>
 </template>
 
@@ -102,10 +96,15 @@ h1 {
   margin: 0;
 }
 .text-container {
+  padding-top: 5rem;
   text-align: center;
   font-size: 4rem;
-  width: 80%;
-  margin-top: 22rem;
+  height: 100vh;
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .body {
@@ -114,36 +113,6 @@ h1 {
     font-size: 4rem;
   }
 }
-.slide-in-enter-active, .slide-in-leave-active {
-  transition: all 0.1s;
-}
-
-.slide-in-enter, .slide-in-leave-to {
-  transform: translateY(80vh);
-}
-
-.slide-up-leave-to{
-  transform: translateY(-100vh);
-}
-.slide-up-enter {
-  transform: translateY(-100vh);
-}
-
-.slide-up-enter-active {
-  transition: all 0.5s;
-}
-
-.slide-up-leave-active {
-  transition: all 0.2s
-}
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 1s;
-}
-
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
 
 .logo-container {
   height: 100vh;
@@ -151,11 +120,19 @@ h1 {
 
 .logo {
   width: 50%;
-  position: fixed;
-  &.relative {
-    position: relative
-  }
+  position: absolute;
+  animation: fadeInAnimation ease 8s; 
+  animation-iteration-count: 1; 
+  animation-fill-mode: forwards; 
 }
 
+@keyframes fadeInAnimation { 
+  0% { 
+      opacity: 0; 
+  } 
+  100% { 
+      opacity: 1; 
+  } 
+} 
 
 </style>

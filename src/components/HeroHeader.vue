@@ -40,10 +40,10 @@ export default {
   },
   methods: {
     scrollListener() {
-      if (window.scrollY > 800) {
+      if (window.scrollY > 100) {
         this.displayScrollChevrons = false
       }
-      if (window.scrollY < 800) {
+      if (window.scrollY < 100) {
         this.displayScrollChevrons = true
       }
     },

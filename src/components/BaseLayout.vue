@@ -17,7 +17,7 @@ export default {
 .base-layout {
     color:#111111;
     opacity: 0.99;
-    background-color: #111111;
+    background: $logo-cream;
 }
 
 </style>

@@ -22,7 +22,7 @@ video {
   width: 100vw;
   height:calc(100vh);
   object-fit: cover;
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   z-index: -100;
