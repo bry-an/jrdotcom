@@ -6,6 +6,7 @@
     <div v-if="relative" class="hero-wrapper">
       <div class="hero-container">
         <div class="hero-title">{{ heroTitle }}</div>
+        <hr />
         <div class="hero-body">{{ heroBody }}</div>
         <button class="more-button">See more</button>
       </div>
@@ -65,12 +66,18 @@ video {
   }
 }
 
+
 .hero-container {
   background: rgba(0, 0, 0, 0.5);
   margin: auto;
   border-radius: 2px;
   width: 100%;
   padding: 1rem;
+  > hr {
+    width: 70%;
+    padding: 0;
+    margin: 0 0 1.2rem 0;
+  }
 }
 .hero-title {
   font-size: 4rem;
@@ -93,5 +100,9 @@ video {
   border-radius: 1px;
   margin-top: 2rem;
   border: 0.5px solid $jr-cream;
+  width: 100%;
+  @media(min-width: 500px) {
+    width: initial;
+  }
 }
 </style>

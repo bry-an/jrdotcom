@@ -1,6 +1,5 @@
 <template>
   <div class="projects">
-     <h2 class="title">Narrative</h2>
     <div class="video-container">
      <video-tile v-for="narrative in narratives" :video-id="narrative.id" :key="narrative.id" :title="narrative.title" :desc="narrative.desc" />
     </div>
@@ -22,7 +21,7 @@ export default {
     projects: {
       narrative: [{
         id: 475660503,
-        title: 'Swarm',
+        title: 'SWARM',
         desc: 'The relationship between a rural farmer and his father disintegrates following an offer to purchase their family home.'
         }],
       audioVisual: [],
