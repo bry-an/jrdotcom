@@ -8,18 +8,18 @@
         class="logo"
       />
     </div>
-      <div id="leading-text" class="text-container">
-        <text-container :text="leadingText" />
-      </div>
-      <div id="body-text" class="text-container">
-        <text-container :text="bodyText[0]" />
-      </div>
-      <div class="text-container">
-        <text-container :text="bodyText[1]" />
-      </div>
-      <div>
-        <vimeo-container :relative="true" url="https://player.vimeo.com/video/475660503"/>
-      </div>
+    <div id="leading-text" class="text-container">
+      <text-container :text="leadingText" />
+    </div>
+    <div id="body-text" class="text-container">
+      <text-container :text="bodyText[0]" />
+    </div>
+    <div class="text-container">
+      <text-container :text="bodyText[1]" />
+    </div>
+    <div>
+      <video-container :relative="true" url="https://jrdotcom.s3-us-west-1.amazonaws.com/Guitarist+-+46.mp4"/>
+    </div>
   </div>
 </template>
 
@@ -27,7 +27,7 @@
 // @ is an alias to /src
 import HeroHeader from '../components/HeroHeader.vue'
 import TextContainer from '../components/TextContainer.vue'
-import VimeoContainer from '../components/VimeoContainer.vue'
+import VideoContainer from '../components/VideoContainer.vue'
 import { mapGetters } from 'vuex'
 
 export default {
@@ -35,7 +35,7 @@ export default {
   components: {
     HeroHeader,
     TextContainer,
-    VimeoContainer,
+    VideoContainer,
   },
   data: () => ({
     showLeadingText: false,
@@ -43,6 +43,10 @@ export default {
     showBaseText: false,
     wait: false,
     state: 0,
+    options: {
+      autoplay: true,
+      fullscreen: true,
+    }
   }),
   computed: {
     ...mapGetters(['homeState']),
@@ -107,10 +111,10 @@ h1 {
   margin: 0;
 }
 .text-container {
-  padding-top: 30rem;
+  padding-top: 15rem;
   text-align: center;
   font-size: 4rem;
-  min-height: 80vh;
+  min-height: 20vh;
   width: 100%;
   @media (min-width: 400px) {
     width: 70%;
@@ -122,7 +126,7 @@ h1 {
 .body {
   font-size: 2.8rem;
   @media (min-width: 1200px) {
-    font-size: 4rem;
+    font-size: 5rem;
   }
 }
 

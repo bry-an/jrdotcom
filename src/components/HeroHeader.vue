@@ -1,7 +1,7 @@
 <template>
   <div class="hero-header">
     <video-container :url="currentUrl" />
-    <div @click="scrollHandler('about')" class="scroll-chevrons" v-if="displayScrollChevrons">
+    <div @click="scrollHandler('about')" class="scroll-chevrons">
       <div class="chevron" />
       <div class="chevron" />
       <div class="chevron" />
@@ -21,9 +21,6 @@ export default {
   data: () => ({
     displayScrollChevrons: true,
   }),
-  mounted() {
-    window.addEventListener('scroll', this.scrollListener)
-  },
   watch: {
     currentUrl() {
       this.$forceUpdate()
@@ -36,23 +33,12 @@ export default {
     }
   },
   methods: {
-    scrollListener() {
-      if (window.scrollY > 100) {
-        this.displayScrollChevrons = false
-      }
-      if (window.scrollY < 100) {
-        this.displayScrollChevrons = true
-      }
-    },
     scrollHandler(id) {
       document.getElementById(id).scrollIntoView({
         behavior: 'smooth',
         block: 'start',
       })
     },
-  },
-  destroyed() {
-    window.removeEventListener('scroll', this.scrollListener)
   },
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
     <div>
-      <div :class="['header', 'flex', 'flex-col', {'green-background': scrollDown}]">
+      <div :class="['header', 'flex', 'flex-col', {'scroll': scrollDown}]">
         <div class="header-image-container xl:w-1/12 sm:w-1/6 xs:w-2/12 w-1/4">
         <img class="header-image" src="https://jrdotcom.s3-us-west-1.amazonaws.com/bottle_cap2.png" alt="foam soda logo">
         </div>
@@ -15,22 +15,28 @@
 <script>
 export default {
   name: 'Header',
-  props: {
-    scroll: {
-      type: Object,
-      default: () => ({}),
-    }
+  data: () => ({
+    scrollDown: false,
+  }),
+  mounted() {
+    window.addEventListener('scroll', this.scrollListener)
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.scrollListener)
   },
   methods: {
-    handleScroll(id) {
-      if (this.$route.path === '/projects') {
-        this.$router.push({name: 'home', query: {s: 'true'}})
+    scrollListener() {
+      if (window.scrollY > 20) {
+        this.scrollDown = true
       } else {
-      document.getElementById(id).scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      })
+        this.scrollDown = false
       }
+    },
+    routeHome() {
+      this.$router.push({path: '/'})
+    },
+    routeToAbout() {
+      return
     },
     navItemColor(route)  {
       const currentRoute = this.$route.path
@@ -55,7 +61,7 @@ export default {
   flex-direction: column-reverse;
   flex-wrap: wrap;
   text-align: right;
-  padding: 1.5rem;
+  padding: 0.5rem;
   z-index: 10;
   font-family: blockhead-dark-side, sans-serif;
   font-weight: 400;
@@ -68,6 +74,9 @@ export default {
   animation-fill-mode: forwards; 
   @media (min-width: 895px) {
     flex-direction: row;
+  }
+  &.scroll {
+    background:rgba(180, 232, 194, 0.3);
   }
 }
 .nav-item {
