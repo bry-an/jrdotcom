@@ -1,5 +1,5 @@
 <template>
-<div class="base-layout">
+<div :class="['base-layout', {'white-background': $route.name === 'projects'}]">
     <slot />
 </div>
   
@@ -18,6 +18,9 @@ export default {
     color:#111111;
     opacity: 0.99;
     background: $logo-cream;
+    &.white-background {
+        background: white;
+    }
 }
 
 </style>

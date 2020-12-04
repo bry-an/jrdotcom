@@ -4,8 +4,8 @@
     <div class="side-panel">
       <div class="video-title">
         {{ title }}
-        <hr />
       </div>
+        <hr />
       <div class="video-body">
         {{ desc }}
       </div>
@@ -35,12 +35,29 @@ export default {
   data: () => ({
     player: null,
   }),
+  computed: {
+    videoWidth() {
+      if (this.$el.offsetWidth < 400) {
+        return 375
+      }
+      if (this.$el.offsetWidth < 600) {
+        return 400
+      }
+      if (this.$el.offsetWidth < 850) {
+        return 600
+      }
+      return 850
+    },
+  },
   mounted() {
     setTimeout(() => {
-      console.log('ref', this.$refs.video)
       const player = new Player(this.$refs.video, {
         id: this.videoId,
-        width: 850,
+        width: this.videoWidth,
+        title: false,
+        byline: false,
+        color: 'bf5656',
+        portrait: false,
       })
       this.player = player
     }, 200)
@@ -53,23 +70,40 @@ export default {
   font-family: Lato;
   padding: 0 2rem;
   margin-left: 2rem;
-}
-.video-tile {
-  display: flex;
-  justify-content: center;
-}
-
-.video-title {
-  font-size: 4rem;
-  font-weight: bold;
-  padding: 2rem 0;
   > hr {
     width: 70%;
     border: 0.1rem solid $logo-red;
+    @media (min-width: 1280px) {
+      margin: 0;
+    }
+    margin: auto;
   }
+}
+
+.video-tile {
+  margin-bottom: 7rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 1280px) {
+    flex-wrap: nowrap;
+    text-align: left;
+  }
+}
+.video {
+  border-radius: 10px;
+}
+
+.video-title {
+  font-size: 4.3rem;
+  font-weight: 800;
+  padding-bottom: 3rem;
 }
 
 .video-body {
   font-size: 2rem;
+  margin-top: 2rem;
+  opacity: 0.6;
 }
 </style>

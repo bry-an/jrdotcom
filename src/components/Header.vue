@@ -1,8 +1,8 @@
 <template>
     <div>
-      <div :class="['header', 'flex', 'flex-col', {'scroll': scrollDown}]">
+      <div :class="['header', 'flex', 'flex-col', {'scroll': scrollDown, 'animate': $route.name === 'home', 'border-bottom': $route.name === 'projects'}]">
         <div class="header-image-container xl:w-1/12 sm:w-1/6 xs:w-2/12 w-1/4">
-        <img class="header-image" src="https://jrdotcom.s3-us-west-1.amazonaws.com/bottle_cap2.png" alt="foam soda logo">
+        <img v-show="$route.name === 'projects'" @click="routeHome" class="header-image" src="https://jrdotcom.s3-us-west-1.amazonaws.com/bottle_cap2.png" alt="foam soda logo">
         </div>
         <div id='nav'>
           <span class="nav-item" @click="routeHome" :style="navItemColor('/')">HOME</span>
@@ -61,7 +61,8 @@ export default {
   flex-direction: column-reverse;
   flex-wrap: wrap;
   text-align: right;
-  padding: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 5.5rem 0.5rem 0.5rem;
   z-index: 10;
   font-family: blockhead-dark-side, sans-serif;
   font-weight: 400;
@@ -69,8 +70,6 @@ export default {
   position: fixed;
   top: 0;
   background: transparent;
-  animation: fadeInAnimation ease 16s; 
-  animation-iteration-count: 1; 
   animation-fill-mode: forwards; 
   @media (min-width: 895px) {
     flex-direction: row;
@@ -79,10 +78,17 @@ export default {
     background:rgba(180, 232, 194, 0.3);
   }
 }
+.animate {
+  animation: fadeInAnimation ease 16s; 
+  animation-iteration-count: 1; 
+}
+.border-bottom {
+  border-bottom: 1px solid black;
+}
 .nav-item {
   padding-right: 1rem;
   text-decoration: none;
-  padding-left: 0.5rem;
+  padding: 0 0 0.5 0.5;
   letter-spacing: 2px;
   color: $logo-cream;
   cursor: pointer;
@@ -98,9 +104,13 @@ export default {
 
 .header-image {
   padding: 1rem 2rem;
+  display: none;
   @media (min-width: 895px) {
     padding: 0rem 2rem;
+    display: initial;
   }
+  max-height: 80px;
+  cursor: pointer;
 }
 .blue-text {
   color: $jr-blue;
