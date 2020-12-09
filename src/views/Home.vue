@@ -8,7 +8,7 @@
         class="logo"
       />
     </div>
-    <div id="leading-text" class="text-container">
+    <div ref="leadingText" id="leading-text" class="text-container">
       <text-container :text="leadingText" />
     </div>
     <div id="body-text" class="text-container">
@@ -48,6 +48,11 @@ export default {
       fullscreen: true,
     }
   }),
+  mounted() {
+    if (this.$route.name === 'about') {
+      this.scroll()
+    }
+  },
   computed: {
     ...mapGetters(['homeState']),
     subHeaderTitle() {
@@ -66,37 +71,12 @@ export default {
       ]
     },
   },
-  mounted() {
-    if (this.$route.query.s === 'true') {
-      setTimeout(() => {
-        this.scroll()
-      }, 500)
-    }
-    window.addEventListener('scroll', this.scrollListener)
-  },
   methods: {
     scroll() {
-      document.getElementById('about').scrollIntoView({
+      document.getElementById('leading-text').scrollIntoView({
         behavior: 'smooth',
         block: 'start',
       })
-    },
-    onWheel(e) {
-      if (this.wait === false) {
-        if (e.deltaY > 0) {
-          if (this.homeState <= 4) {
-            this.$store.commit('INCREMENT_HOME_STATE')
-          }
-        } else {
-          if (this.homeState >= 1) {
-            this.$store.commit('DECREMENT_HOME_STATE')
-          }
-        }
-        this.wait = true
-        setTimeout(() => {
-          this.wait = false
-        }, 1500)
-      }
     },
   },
 }
@@ -113,11 +93,12 @@ h1 {
 .text-container {
   padding-top: 15rem;
   text-align: center;
-  font-size: 4rem;
+  font-size: 3rem;
   min-height: 20vh;
   width: 100%;
   @media (min-width: 400px) {
     width: 70%;
+    font-size: 4rem;
   }
   width: 90%;
   margin: auto;
@@ -135,11 +116,14 @@ h1 {
 }
 
 .logo {
-  width: 50%;
+  width: 85%;
   position: absolute;
   animation: fadeInAnimation ease 8s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  @media (min-width: 500px) {
+    width: 50%;
+  }
 }
 
 @keyframes fadeInAnimation {

@@ -56,6 +56,9 @@ export default {
     promotionals() {
       return this.projects.promotional
     },
+  },
+  mounted() {
+    this.$store.commit('SET_FRESH_INSTANCE', false)
   }
 }
 </script>

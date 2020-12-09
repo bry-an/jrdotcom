@@ -5,10 +5,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    homeState: 0
+    homeState: 0,
+    freshInstance: true,
   },
   getters: {
-    homeState: (state) => state.homeState
+    homeState: (state) => state.homeState,
+    freshInstance: (state) => state.freshInstance,
   },
   mutations: {
    INCREMENT_HOME_STATE(state) {
@@ -19,7 +21,10 @@ export default new Vuex.Store({
    },
    SET_HOME_STATE(state, val) {
      state.homeState = val
-   }
+   },
+   SET_FRESH_INSTANCE(state, val) {
+     state.freshInstance = val
+   },
   },
   actions: {
   },

@@ -3,7 +3,7 @@
     <div ref="video" class="video" />
     <div class="side-panel">
       <div class="video-title">
-        {{ title }}
+        <img class="title-image" src="https://jrdotcom.s3-us-west-1.amazonaws.com/bottle_cap2.png"/>{{ title }}
       </div>
         <hr />
       <div class="video-body">
@@ -66,6 +66,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.title-image {
+  display: inline;
+  padding-bottom: 1rem;
+  margin-right: 1rem;
+  width: 3.5rem;
+}
 .side-panel {
   font-family: Lato;
   padding: 0 2rem;
@@ -98,12 +104,25 @@ export default {
 .video-title {
   font-size: 4.3rem;
   font-weight: 800;
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  margin-top: 1rem;
+  @media (min-width: 1280px) {
+    text-align: left;
+  }
 }
 
 .video-body {
   font-size: 2rem;
   margin-top: 2rem;
   opacity: 0.6;
+  text-align: center;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  @media (min-width: 1280px) {
+    text-align: left;
+    width: 100%;
+  }
 }
 </style>
