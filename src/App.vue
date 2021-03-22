@@ -35,8 +35,8 @@ export default {
 
 <style lang="scss">
 @import '@/assets/style/globalStyles.scss';
-@import url('https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@0,100;0,700;1,100;1,400&family=PT+Sans+Narrow:wght@400;700&family=Roboto&family=Lato:wght@300&family=Anton&family=Martel:wght@800&family=Kanit:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700&display=swap');
 @import url('https://use.typekit.net/shd6cst.css');
 
 html {

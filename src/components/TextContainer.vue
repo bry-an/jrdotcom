@@ -25,7 +25,7 @@ h2 {
 
 .text {
   letter-spacing: 5px;
-  font-family: blockhead-dark-side, sans-serif;
+  font-family: 'Red Hat Display', sans-serif;
   font-weight: 400;
   color: $logo-red;
 }

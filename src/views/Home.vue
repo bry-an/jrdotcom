@@ -8,7 +8,7 @@
         class="logo"
       />
     </div>
-    <div ref="leadingText" id="leading-text" class="text-container">
+    <div ref="leadingText" id="leading-text" class="text-container pt-16">
       <text-container :text="leadingText" />
     </div>
     <div id="body-text" class="text-container">
@@ -91,13 +91,12 @@ h1 {
   margin: 0;
 }
 .text-container {
-  padding-top: 15rem;
+  padding-top: 4rem;
   text-align: center;
   font-size: 3rem;
   min-height: 20vh;
-  width: 100%;
   @media (min-width: 400px) {
-    width: 70%;
+    width: 80%;
     font-size: 4rem;
   }
   width: 90%;
@@ -122,7 +121,7 @@ h1 {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   @media (min-width: 500px) {
-    width: 50%;
+    width: 75%;
   }
 }
 

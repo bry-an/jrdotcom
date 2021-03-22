@@ -5,9 +5,9 @@
         <img v-if="$route.name === 'projects'" @click="routeHome" class="header-image" src="https://jrdotcom.s3-us-west-1.amazonaws.com/bottle_cap2.png" alt="foam soda logo">
         </div> -->
         <div id='nav'>
-          <span class="nav-item" @click="routeHome" :style="navItemColors.home">HOME</span>
-          <span class="nav-item" @click="routeToAbout" :style="navItemColors.about">ABOUT</span>
-          <span class="nav-item" @click="routeToProjects" :style="navItemColors.projects">PROJECTS</span>
+          <span class="nav-item" @click="routeHome" :style="navItemColors.home">Home</span>
+          <span class="nav-item" @click="routeToAbout" :style="navItemColors.about">About</span>
+          <span class="nav-item" @click="routeToProjects" :style="navItemColors.projects">Projects</span>
         </div>
       </div>
     </div>
@@ -103,7 +103,7 @@ export default {
   width: 100%;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
   z-index: 10;
-  font-family: blockhead-dark-side, sans-serif;
+  font-family: 'Red Hat Display', sans-serif;
   font-weight: 400;
   font-style: normal;
   position: fixed;
