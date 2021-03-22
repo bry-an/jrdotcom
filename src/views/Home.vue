@@ -17,9 +17,16 @@
     <div class="text-container">
       <text-container :text="bodyText[1]" />
     </div>
-    <div>
-      <video-container :relative="true" url="https://jrdotcom.s3-us-west-1.amazonaws.com/Guitarist+-+46.mp4"/>
-    </div>
+    <!-- <div>
+      
+    </div> -->
+    <swiper ref="videoSwiper" :options="swiperOptions">
+      <swiper-slide><video-container :relative="true" url="https://jrdotcom.s3-us-west-1.amazonaws.com/Guitarist+-+46.mp4"/></swiper-slide>
+      <swiper-slide><video-container :relative="true" url="https://jrdotcom.s3-us-west-1.amazonaws.com/Guitarist+-+46.mp4"/></swiper-slide>
+      <div class="swiper-pagination" slot="pagination"></div>
+        <div class="swiper-button-prev" @click="swiperPrev" slot="button-prev"></div>
+        <div class="swiper-button-next" @click="swiperNext" slot="button-next"></div>
+    </swiper>
   </div>
 </template>
 
@@ -70,6 +77,14 @@ export default {
         we must be bold, balanced, and beautiful`,
       ]
     },
+    swiperOptions() {
+      return {
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      }
+    }
   },
   methods: {
     scroll() {
@@ -78,6 +93,12 @@ export default {
         block: 'start',
       })
     },
+    swiperNext() {
+      this.$refs.videoSwiper.$swiper.slideNext()
+    },
+    swiperPrev() {
+      this.$refs.videoSwiper.$swiper.slidePrev()
+    }
   },
 }
 </script>

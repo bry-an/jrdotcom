@@ -1,19 +1,16 @@
 <template>
   <div id="app container">
     <base-layout>
-    <site-header :scroll="scrollListener"/>
     <router-view />
     </base-layout>
   </div>
 </template>
 
 <script>
-import SiteHeader from "@/components/Header.vue"
 import BaseLayout from "@/components/BaseLayout.vue"
 
 export default {
   components: {
-    SiteHeader,
     BaseLayout
   },
   computed: {
