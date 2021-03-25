@@ -1,13 +1,20 @@
 <template>
-  <div style="position: relative;">
-    <video :class="relative ? 'relative' : ''" autoplay muted loop id="hero-video 2">
+  <div @click="playPauseVideo" style="position: relative">
+    <video
+      :poster="poster"
+      :class="relative ? 'relative' : ''"
+      muted
+      :autoplay="autoplay"
+      loop
+      ref="videoRef"
+    >
       <source :src="url" type="video/mp4" />
     </video>
     <div v-if="relative" class="hero-wrapper">
       <div class="hero-container">
-        <div class="hero-title">{{ heroTitle }}</div>
+        <div class="hero-title">{{ title }}</div>
         <hr />
-        <div class="hero-body">{{ heroBody }}</div>
+        <div class="hero-body">{{ body }}</div>
         <button class="more-button">See more</button>
       </div>
     </div>
@@ -25,16 +32,46 @@ export default {
       type: Boolean,
       default: false,
     },
+    title: {
+      type: String,
+      default: '',
+    },
+    body: {
+      type: String,
+      default: '',
+    },
+    poster: {
+      type: String,
+      default: '',
+    },
+    autoplay: {
+      type: Boolean,
+      default: false,
+    },
   },
   data: () => ({
-    heroTitle: 'SWARM',
-    heroBody: `The relationship between a rural farmer and his father 
-    disintegrates following an offer to purchase their family home.`,
+    videoIsPlaying: false,
   }),
+  methods: {
+    pause() {
+      this.$refs.videoRef.pause()
+      this.videoIsPlaying = false
+    },
+    playPauseVideo() {
+      if (this.videoIsPlaying) {
+        this.$refs.videoRef.pause()
+        this.videoIsPlaying = false
+        return
+      }
+      this.$refs.videoRef.play()
+      this.videoIsPlaying = true
+    },
+  },
 }
 </script>
 <style lang="scss" scoped>
 video {
+  cursor: pointer;
   width: 100vw;
   height: calc(100vh + 60px);
   object-fit: cover;
@@ -58,14 +95,13 @@ video {
   justify-content: flex-end;
   align-items: flex-start;
   width: 100%;
-  
+
   @media (min-width: 900px) {
     bottom: 10%;
     width: 70%;
     left: 1%;
   }
 }
-
 
 .hero-container {
   background: rgba(0, 0, 0, 0.5);
@@ -83,7 +119,7 @@ video {
   font-size: 4rem;
   letter-spacing: 0.5rem;
   font-family: 'Kanit';
-  @media(min-width: 900px) {
+  @media (min-width: 900px) {
     font-size: 6rem;
   }
 }
@@ -91,7 +127,7 @@ video {
 .hero-body {
   font-family: 'Martel';
   font-size: 1.5rem;
-  @media(min-width: 900px) {
+  @media (min-width: 900px) {
     font-size: 3rem;
   }
 }
@@ -101,7 +137,7 @@ video {
   margin-top: 2rem;
   border: 0.5px solid $jr-cream;
   width: 100%;
-  @media(min-width: 500px) {
+  @media (min-width: 500px) {
     width: initial;
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="hero-header">
-    <video-container :url="currentUrl" />
+    <video-container :url="currentUrl" :autoplay="true" />
     <div @click="scrollHandler('about')" class="scroll-chevrons">
       <div class="chevron" />
       <div class="chevron" />
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import videos from '@/videos.json'
+import videos from '@/videos.js'
 import {mapGetters} from "vuex"
 import VideoContainer from "../components/VideoContainer.vue"
 export default {
@@ -29,7 +29,7 @@ export default {
   computed: {
     ...mapGetters(['homeState']),
     currentUrl() {
-      return videos.videos[0].url
+      return videos.header.url
     }
   },
   methods: {
