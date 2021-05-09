@@ -14,20 +14,18 @@
     <div id="body-text" class="text-container">
       <text-container :text="bodyText[0]" />
     </div>
-    <div class="text-container">
-      <text-container :text="bodyText[1]" />
-    </div>
     <swiper ref="videoSwiper" :options="swiperOptions">
       <template v-for="video in videos">
-      <swiper-slide :key="`vs-${video.id}`"
-        ><video-container
-          ref="videoContainer"
-          :body="video.description"
-          :title="video.title"
-          :relative="true"
-          :url="video.url"
-          :poster="video.poster"
-      /></swiper-slide>
+        <swiper-slide :key="`vs-${video.id}`"
+          ><video-container
+            ref="videoContainer"
+            :body="video.description"
+            :title="video.title"
+            :year="video.year"
+            :relative="true"
+            :url="video.url"
+            :poster="video.poster"
+        /></swiper-slide>
       </template>
       <div class="swiper-pagination" slot="pagination"></div>
       <div class="swiper-button-prev" @click="swiperPrev" slot="button-prev"></div>
@@ -42,7 +40,7 @@ import HeroHeader from '../components/HeroHeader.vue'
 import TextContainer from '../components/TextContainer.vue'
 import VideoContainer from '../components/VideoContainer.vue'
 import { mapGetters } from 'vuex'
-import videos from "@/videos.js"
+import videos from '@/videos.js'
 
 export default {
   name: 'Home',
@@ -80,9 +78,6 @@ export default {
       return [
         `Working with artists from around the world, we take on each step of production
         from conception to completion`,
-        `Experimenting with the restrictions of reality and
-        genre, ceaselessly editing the madness around us into relatable stories. To do this, 
-        we must be bold, balanced, and beautiful`,
       ]
     },
     swiperOptions() {
@@ -101,7 +96,7 @@ export default {
         block: 'start',
       })
     },
-    pauseAllVideos () {
+    pauseAllVideos() {
       // pause all videos when swiping either direction
       this.$refs.videoContainer.forEach((ref) => {
         ref.pause()
@@ -122,6 +117,10 @@ export default {
 <style lang="scss">
 h1 {
   margin: 0;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
 }
 
 .home {

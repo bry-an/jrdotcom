@@ -1,7 +1,7 @@
 <template>
-<div class="text">
-  {{text}}
-</div>
+  <div class="text">
+    {{ text }}
+  </div>
 </template>
 
 <script>
@@ -18,6 +18,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/style/globalStyles.scss';
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 h2 {
   text-align: center;
@@ -25,9 +26,7 @@ h2 {
 
 .text {
   letter-spacing: 5px;
-  font-family: 'Red Hat Display', sans-serif;
-  font-weight: 400;
+  font-family: 'Lato', sans-serif;
   color: $logo-red;
 }
-
 </style>

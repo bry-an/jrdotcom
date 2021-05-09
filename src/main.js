@@ -4,14 +4,13 @@ import 'swiper/components/pagination/pagination.scss'
 import 'swiper/swiper.min.css'
 import Vue from 'vue'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-import VideoBg from "vue-videobg"
-import vueVimeoPlayer from "vue-vimeo-player"
+import VideoBg from 'vue-videobg'
+import vueVimeoPlayer from 'vue-vimeo-player'
 import App from './App.vue'
 import router from './router'
 import store from './store'
- 
- 
-Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
+
+Vue.use(VueAwesomeSwiper, { autoHeight: true })
 
 Vue.component('video-bg', VideoBg)
 Vue.use(vueVimeoPlayer)
@@ -23,5 +22,5 @@ new Vue({
   components: {
     VideoBg,
   },
-  render: h => h(App)
+  render: (h) => h(App),
 }).$mount('#app')

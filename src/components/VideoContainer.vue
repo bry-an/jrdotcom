@@ -13,9 +13,6 @@
     <div v-if="relative" class="hero-wrapper">
       <div class="hero-container">
         <div class="hero-title">{{ title }}</div>
-        <hr />
-        <div class="hero-body">{{ body }}</div>
-        <button class="more-button">See more</button>
       </div>
     </div>
   </div>
@@ -33,6 +30,10 @@ export default {
       default: false,
     },
     title: {
+      type: String,
+      default: '',
+    },
+    year: {
       type: String,
       default: '',
     },
@@ -104,7 +105,6 @@ video {
 }
 
 .hero-container {
-  background: rgba(0, 0, 0, 0.5);
   margin: auto;
   border-radius: 2px;
   width: 100%;
