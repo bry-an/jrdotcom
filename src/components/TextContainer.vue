@@ -1,43 +1,32 @@
 <template>
-<div class="text">
-    <h2 class="title">{{title}}</h2>
-  {{ text }}
-</div>
+  <div class="text">
+    {{ text }}
+  </div>
 </template>
 
 <script>
 export default {
   name: 'TextContainer',
   props: {
-      text: {
-          type: String,
-          default: '',
-      },
-      title: {
-          type: String,
-          default: '',
-      },
+    text: {
+      type: String,
+      default: '',
+    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
 @import '@/assets/style/globalStyles.scss';
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 h2 {
   text-align: center;
 }
+
 .text {
-  letter-spacing: 3px;
-  font-size: 1.8rem;
-  text-align: justify;
-  padding: 0 10rem;
-  line-height: 4rem;
+  letter-spacing: 5px;
+  font-family: 'Lato', sans-serif;
+  color: $logo-red;
 }
-.title {
-  color: $jr-blue;
-
-}
-
-
 </style>

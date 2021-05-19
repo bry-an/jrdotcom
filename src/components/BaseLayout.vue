@@ -1,5 +1,5 @@
 <template>
-<div class="base-layout">
+<div :class="['base-layout', {'white-background': $route.name === 'projects'}]">
     <slot />
 </div>
   
@@ -15,9 +15,12 @@ export default {
 @import '@/assets/style/globalStyles.scss';
 
 .base-layout {
-    color:$jr-cream;
-    background: black;
-    opacity: 0.8;
+    color:#111111;
+    opacity: 0.99;
+    background: $logo-cream;
+    &.white-background {
+        background: white;
+    }
 }
 
 </style>
