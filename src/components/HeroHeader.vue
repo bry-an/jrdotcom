@@ -1,18 +1,13 @@
 <template>
   <div class="hero-header">
     <video-container :url="currentUrl" :autoplay="true" />
-    <div @click="scrollHandler('about')" class="scroll-chevrons">
-      <div class="chevron" />
-      <div class="chevron" />
-      <div class="chevron" />
-    </div>
   </div>
 </template>
 
 <script>
 import videos from '@/videos.js'
-import {mapGetters} from "vuex"
-import VideoContainer from "../components/VideoContainer.vue"
+import { mapGetters } from 'vuex'
+import VideoContainer from '../components/VideoContainer.vue'
 export default {
   name: 'BaseLayout',
   components: {
@@ -24,13 +19,13 @@ export default {
   watch: {
     currentUrl() {
       this.$forceUpdate()
-    }
+    },
   },
   computed: {
     ...mapGetters(['homeState']),
     currentUrl() {
       return videos.header.url
-    }
+    },
   },
   methods: {
     scrollHandler(id) {
@@ -123,8 +118,8 @@ $base: 1.2rem;
   bottom: 10rem;
   left: 50%;
   visibility: hidden;
-  @media(min-width: 1620px) {
-      visibility: visible;
+  @media (min-width: 1620px) {
+    visibility: visible;
   }
 }
 </style>
