@@ -17,7 +17,7 @@
         </p>
       </div>
     </div>
-    <swiper ref="videoSwiper" :options="swiperOptions">
+    <swiper ref="videoSwiper" :options="swiperOptions" @slideChange="onSlideChange">
       <template v-for="video in videos">
         <swiper-slide :key="`vs-${video.id}`"
           ><video-container
@@ -110,8 +110,11 @@ export default {
         block: 'start',
       })
     },
+    onSlideChange() {
+      this.pauseAllVideos()
+    },
     pauseAllVideos() {
-      // pause all videos when swiping either direction
+      // pause all videos when swiping either direction')
       this.$refs.videoContainer.forEach((ref) => {
         ref.pause()
       })

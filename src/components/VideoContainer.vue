@@ -3,6 +3,7 @@
     <video
       :poster="poster"
       :class="relative ? 'relative' : ''"
+      :muted="autoplay === true"
       :autoplay="autoplay"
       loop
       ref="videoRef"
