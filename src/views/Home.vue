@@ -8,11 +8,14 @@
         class="logo"
       />
     </div>
-    <div ref="leadingText" id="leading-text" class="text-container">
-      <text-container :text="leadingText" />
-    </div>
-    <div id="body-text" class="text-container">
-      <text-container :text="bodyText[0]" />
+    <div class="text-container">
+      <div class="info">
+        <p> A Los Angeles creative agency specializing in audiovisual production </p>
+        <p>
+          Working with artists from around the world, we take on each step of production from
+          conception to completion
+        </p>
+      </div>
     </div>
     <swiper ref="videoSwiper" :options="swiperOptions">
       <template v-for="video in videos">
@@ -31,13 +34,34 @@
       <div class="swiper-button-prev" @click="swiperPrev" slot="button-prev"></div>
       <div class="swiper-button-next" @click="swiperNext" slot="button-next"></div>
     </swiper>
+    <section class="text-container about pt-12">
+      <div class="w-1/2 float-left pl-6 pr-6 pb-6 pt-3">
+        <img src="../assets/images/about-us.jpeg" alt="jon and cyrus" />
+      </div>
+      <p>
+        Cyrus and Jon are the founders of FOAM SODA, a mixed media studio where all projects are
+        developed in-house.
+      </p>
+      <p>
+        The company was founded in 2018 following collaborations on various short films and music
+        videos.
+      </p>
+      <p>
+        Since they’re small and economical they dedicate themselves entirely to their clients. They
+        do not repeat themselves and are constantly iterating, and staying current.
+      </p>
+      <p>
+        They come from a background in production and music supervision in tech and in fashion, as
+        well as feature film production and development.
+      </p>
+      <p> Please reach out for all media needs. Come and see us at our downtown LA office! </p>
+    </section>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HeroHeader from '../components/HeroHeader.vue'
-import TextContainer from '../components/TextContainer.vue'
 import VideoContainer from '../components/VideoContainer.vue'
 import { mapGetters } from 'vuex'
 import videos from '@/videos.js'
@@ -46,7 +70,6 @@ export default {
   name: 'Home',
   components: {
     HeroHeader,
-    TextContainer,
     VideoContainer,
   },
   data: () => ({
@@ -70,15 +93,6 @@ export default {
     ...mapGetters(['homeState']),
     subHeaderTitle() {
       return 'FOAM SODA'
-    },
-    leadingText() {
-      return `A Los Angeles creative agency specializing in audiovisual production`
-    },
-    bodyText() {
-      return [
-        `Working with artists from around the world, we take on each step of production
-        from conception to completion`,
-      ]
     },
     swiperOptions() {
       return {
@@ -121,22 +135,25 @@ h1 {
 .swiper-button-next,
 .swiper-button-prev {
   color: white;
+  width: 22px;
+  height: 44px;
 }
 
 .home {
   margin: 0;
 }
 .text-container {
-  padding-top: 8rem;
-  text-align: center;
-  font-size: 3rem;
+  font-size: 1rem;
   min-height: 20vh;
   @media (min-width: 400px) {
-    width: 80%;
-    font-size: 4rem;
+    width: 70%;
+    font-size: 2rem;
   }
   width: 90%;
   margin: auto;
+  letter-spacing: 5px;
+  color: $logo-red;
+  font-family: 'Lato', sans-serif;
 }
 
 .body {
@@ -159,6 +176,15 @@ h1 {
   @media (min-width: 500px) {
     width: 75%;
   }
+}
+.info {
+  padding-top: 20rem;
+}
+.about {
+  padding-bottom: 2rem;
+  letter-spacing: 5px;
+  font-family: Lato, sans-serif;
+  color: #bf5656;
 }
 
 @keyframes fadeInAnimation {
