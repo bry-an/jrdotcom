@@ -35,26 +35,22 @@
       <div class="swiper-button-next" @click="swiperNext" slot="button-next"></div>
     </swiper>
     <section class="text-container about pt-12">
-      <div class="w-1/2 float-left pl-6 pr-6 pb-6 pt-3">
+      <div class="md:w-1/2 md:float-left md:pl-6 md:pr-6 md:pb-6 pt-3 mb-4">
         <img src="../assets/images/about-us.jpeg" alt="jon and cyrus" />
       </div>
       <p>
-        Cyrus and Jon are the founders of FOAM SODA, a mixed media studio where all projects are
-        developed in-house.
+        Cyrus Gill and Jon Rose are the founders of FOAM SODA, a mixed media studio where all
+        projects are developed in-house.
       </p>
       <p>
-        The company was founded in 2018 following collaborations on various short films and music
-        videos.
+        Cyrus and Jon dedicate themselves entirely to their clients. They do not repeat themselves
+        and they strive to stay current. They come from a background in production and music
+        supervision in tech and in fashion, as well as feature film production and development.
       </p>
       <p>
-        Since they’re small and economical they dedicate themselves entirely to their clients. They
-        do not repeat themselves and are constantly iterating, and staying current.
+        Please reach out at <a href="mailto:foamsodala@gmail.com">foamsodala@gmail.com</a> for all
+        media needs. Come and see us at our downtown LA office!
       </p>
-      <p>
-        They come from a background in production and music supervision in tech and in fashion, as
-        well as feature film production and development.
-      </p>
-      <p> Please reach out for all media needs. Come and see us at our downtown LA office! </p>
     </section>
   </div>
 </template>
