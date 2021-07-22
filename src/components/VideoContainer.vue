@@ -11,9 +11,7 @@
       <source :src="url" type="video/mp4" />
     </video>
     <div v-if="relative" class="hero-wrapper">
-      <div class="hero-container">
-        <div class="hero-title">{{ title }}</div>
-      </div>
+
     </div>
   </div>
 </template>
