@@ -4,7 +4,7 @@
 
 <p>In addition to film scoring, Foley, and bespoke commercial production, Cyrus develops albums with a variety of bands from pop to experimental.</p> -->
     <div class="video-container">
-     <video-tile v-for="narrative in narratives" :video-id="narrative.id" :key="narrative.id" :title="narrative.title" :desc="narrative.desc" />
+     <video-tile v-for="narrative in narratives" :video-id="narrative.id" :key="narrative.id" :desc="narrative.desc" />
     </div>
 
   </div>
