@@ -1,9 +1,10 @@
 module.exports = {
-  future: {
-    // removeDeprecatedGapUtilities: true,
-    // purgeLayersByDefault: true,
+   future: {
+    purgeLayersByDefault: true,
   },
-  purge: ["./src/**/*.vue"],
+  purge: {
+    content: ["./src/**/*.vue"],
+  },
   theme: {
     screens: {
       'xs': '480px',

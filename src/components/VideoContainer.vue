@@ -1,20 +1,16 @@
 <template>
-  <div @click="playPauseVideo" style="position: relative">
+  <div @click="playPauseVideo">
     <video
       :poster="poster"
       :class="relative ? 'relative' : ''"
-      :muted="autoplay === true"
+      :muted="muted"
       :autoplay="autoplay"
+      playsinline
       loop
       ref="videoRef"
     >
       <source :src="url" type="video/mp4" />
     </video>
-    <div v-if="relative" class="hero-wrapper">
-      <div class="hero-container">
-        <div class="hero-title">{{ title }}</div>
-      </div>
-    </div>
   </div>
 </template>
 <script>
@@ -24,6 +20,10 @@ export default {
     url: {
       type: String,
       default: '',
+    },
+    muted: {
+      type: Boolean,
+      default: false,
     },
     relative: {
       type: Boolean,

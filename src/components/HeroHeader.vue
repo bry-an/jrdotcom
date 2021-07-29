@@ -1,6 +1,6 @@
 <template>
   <div class="hero-header">
-    <video-container :url="currentUrl" :autoplay="true" />
+    <video-container :url="currentUrl" :muted="true" :autoplay="true" />
   </div>
 </template>
 

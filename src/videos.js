@@ -10,11 +10,20 @@ export default {
       year: '2020',
       description:
         'The relationship between a rural farmer and his father disintegrates following an offer to purchase their family home.',
+      url: 'https://jrdotcom.s3-us-west-1.amazonaws.com/candle.mp4',
+      poster: 'https://jrdotcom.s3.us-west-1.amazonaws.com/candle.jpg',
+    },
+    {
+      id: 2,
+      title: 'SWARM',
+      year: '2020',
+      description:
+        'The relationship between a rural farmer and his father disintegrates following an offer to purchase their family home.',
       url: 'https://jrdotcom.s3-us-west-1.amazonaws.com/SWARM_Trailer_v6.mp4',
       poster: 'https://jrdotcom.s3-us-west-1.amazonaws.com/poster_SWARM_Trailer_v6.jpg',
     },
     {
-      id: 2,
+      id: 3,
       title: 'Beanie',
       description:
         'Everyone loves mascarpone rubber cheese pecorino everyone loves danish fontina pepper jack swiss. Fondue.',
@@ -22,7 +31,7 @@ export default {
       poster: 'https://jrdotcom.s3-us-west-1.amazonaws.com/poster_Cyrus+Content_Beanie_v1.jpg',
     },
     {
-      id: 3,
+      id: 4,
       title: 'FS Opening Reel',
       description:
         'Everyone loves mascarpone rubber cheese pecorino everyone loves danish fontina pepper jack swiss. Fondue.',
@@ -30,7 +39,7 @@ export default {
       poster: 'https://jrdotcom.s3-us-west-1.amazonaws.com/poster_FS_openingreel_v2.jpg',
     },
     {
-      id: 4,
+      id: 5,
       title: 'Ride Society Promo',
       description:
         'Everyone loves mascarpone rubber cheese pecorino everyone loves danish fontina pepper jack swiss. Fondue.',
@@ -39,7 +48,7 @@ export default {
         'https://jrdotcom.s3-us-west-1.amazonaws.com/poster_Ride+Society++Promotional+Video.jpg',
     },
     {
-      id: 5,
+      id: 6,
       title: 'Red Eye',
       description:
         'Everyone loves mascarpone rubber cheese pecorino everyone loves danish fontina pepper jack swiss. Fondue.',

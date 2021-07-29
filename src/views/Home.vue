@@ -1,9 +1,8 @@
 <template>
-  <div class="home">
+  <div class="home overflow-hidden">
     <hero-header />
     <div class="logo-container flex flex-col items-center justify-center">
-      <img
-        src="https://jrdotcom.s3-us-west-1.amazonaws.com/FOAM_SODA.png"
+			<img src="../assets/images/foamsoda_logo.png"
         alt="foam soda logo"
         class="logo"
       />
@@ -167,7 +166,7 @@ h1 {
 }
 
 .logo {
-  width: 85%;
+  width: 90%;
   position: absolute;
   animation: fadeInAnimation ease 8s;
   animation-iteration-count: 1;
